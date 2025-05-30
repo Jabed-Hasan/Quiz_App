@@ -24,8 +24,20 @@ export const quizSlice = createSlice({
       const {questionIndex, answer} = action.payload
       state.userAnswers[questionIndex] = answer
     },
+    nextQuestion: (state) => {
+      if(state.currentQuestionIndex < state.question.length - 1){
+        state.currentQuestionIndex++
+      }
   },
+  previousQuestion: (state) => {
+    if(state.currentQuestionIndex > 0){
+      state.currentQuestionIndex--
+    }
+  },
+  
+
+}
 })
 
-export const {setUserAnswer} = quizSlice.actions
+export const {setUserAnswer, nextQuestion, previousQuestion} = quizSlice.actions
 export default quizSlice.reducer

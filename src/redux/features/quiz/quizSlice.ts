@@ -35,9 +35,13 @@ export const quizSlice = createSlice({
     }
   },
   
+  completeQuiz: (state) => {
+    state.quizCompleted = true
+  },
+  
 
 }
 })
 
-export const {setUserAnswer, nextQuestion, previousQuestion} = quizSlice.actions
+export const {setUserAnswer, nextQuestion, previousQuestion, completeQuiz} = quizSlice.actions
 export default quizSlice.reducer
